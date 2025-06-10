@@ -34,33 +34,35 @@ class ReduceSumLayer(Layer):
 class EnhancedNumberPredictor:
     def __init__(self, sequence_length=15):
         self.sequence_length = sequence_length
-        self.scaler_main = StandardScaler()
-        self.scaler_bonus = StandardScaler()
-        self.model_main = None
-        self.model_bonus = None
+        self.scaler = StandardScaler()
+        self.model = None
         self.feature_names = [
             'mean', 'std', 'min', 'max', 'median',
             'q25', 'q75', 'diff_mean', 'diff_std'
         ]
 
-    def preprocess_data(self, raw_data):
-        """Split and clip main and bonus number arrays."""
-        main_numbers = raw_data[:, :5]
-        bonus_numbers = raw_data[:, 5:]
+    def preprocess_data(self, data):
+        """Clean and normalize input data with robust outlier removal."""
+        data = np.array(data, dtype=np.float32)
 
-        main_numbers = np.clip(main_numbers, 1, 50)
-        bonus_numbers = np.clip(bonus_numbers, 1, 12)
+        # Handle outliers using IQR method
+        q1, q3 = np.percentile(data, [25, 75])
+        iqr = q3 - q1
+        lower_bound = q1 - 1.5 * iqr
+        upper_bound = q3 + 1.5 * iqr
 
-        return main_numbers.astype(int), bonus_numbers.astype(int)
+        filtered = data[(data >= lower_bound) & (data <= upper_bound)]
+        processed = np.clip(filtered, 1, 50)
+        return np.round(processed).astype(int)
 
     def create_sequences(self, data):
-        """Create sequences for time-series prediction."""
+        """Create time-series sequences with enhanced feature engineering."""
         X, y = [], []
         for i in range(len(data) - self.sequence_length):
             window = data[i:i + self.sequence_length]
             target = data[i + self.sequence_length]
 
-            # Window statistics
+            # Calculate window statistics
             window_features = [
                 np.mean(window), np.std(window),
                 np.min(window), np.max(window),
@@ -69,7 +71,7 @@ class EnhancedNumberPredictor:
                 np.diff(window).std()
             ]
 
-            # 3D input with features
+            # Create 3D input with features
             window_array = []
             for value in window:
                 window_array.append([value] + window_features)
@@ -80,22 +82,28 @@ class EnhancedNumberPredictor:
         return np.array(X), np.array(y)
 
     def build_temporal_model(self, input_shape):
-        """Build temporal attention model."""
+        """Construct optimized neural architecture with temporal attention."""
         inputs = Input(shape=input_shape)
 
+        # Feature extraction layer
         x = Conv1D(64, 3, activation='relu', padding='same')(inputs)
         x = BatchNormalization()(x)
         x = Dropout(0.2)(x)
 
+        # Temporal processing
         x = Bidirectional(LSTM(128, return_sequences=True))(x)
         x = BatchNormalization()(x)
         x = Dropout(0.3)(x)
 
+        # Attention mechanism
         attention = Dense(1, activation='tanh')(x)
         attention = Softmax(axis=1)(attention)
         context = Multiply()([x, attention])
+
+        # Use custom layer for reduce_sum
         context = ReduceSumLayer()(context)
 
+        # Prediction head
         x = Dense(64, activation='relu')(context)
         x = Dropout(0.3)(x)
         outputs = Dense(1)(x)
@@ -108,30 +116,35 @@ class EnhancedNumberPredictor:
         )
         return model
 
-    def fit(self, X, y, kind="main"):
-        """Train model based on kind (main or bonus)."""
+    def fit(self, X, y):
+        """Train model with comprehensive data processing pipeline."""
+        # Reshape and scale data
         original_shape = X.shape
         X_flat = X.reshape(-1, X.shape[-1])
-
-        scaler = self.scaler_main if kind == "main" else self.scaler_bonus
-        X_scaled = scaler.fit_transform(X_flat)
+        X_scaled = self.scaler.fit_transform(X_flat)
         X = X_scaled.reshape(original_shape)
 
-        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+        # Train/validation split
+        X_train, X_val, y_train, y_val = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
 
-        model = self.build_temporal_model((self.sequence_length, len(self.feature_names) + 1))
+        # Model initialization
+        self.model = self.build_temporal_model((self.sequence_length, len(self.feature_names) + 1))
 
+        # Training callbacks
         callbacks = [
             EarlyStopping(patience=15, restore_best_weights=True),
             ModelCheckpoint(
-                os.path.join(model_dir, f'best_model_{kind}.keras'),
+                os.path.join(model_dir, 'best_model.keras'),
                 save_best_only=True,
                 monitor='val_loss'
             ),
-            TensorBoard(log_dir=os.path.join(log_dir, kind))
+            TensorBoard(log_dir=log_dir)
         ]
 
-        history = model.fit(
+        # Model training
+        history = self.model.fit(
             X_train, y_train,
             validation_data=(X_val, y_val),
             epochs=100,
@@ -140,26 +153,21 @@ class EnhancedNumberPredictor:
             verbose=1
         )
 
-        y_pred = model.predict(X_val).flatten()
-        print(f"\nValidation ({kind}) MAE: {mean_absolute_error(y_val, y_pred):.2f}")
-        print(f"Validation ({kind}) MSE: {mean_squared_error(y_val, y_pred):.2f}")
+        # Model evaluation
+        y_pred = self.model.predict(X_val).flatten()
+        print(f"\nValidation MAE: {mean_absolute_error(y_val, y_pred):.2f}")
+        print(f"Validation MSE: {mean_squared_error(y_val, y_pred):.2f}")
 
-        if kind == "main":
-            self.model_main = model
-        else:
-            self.model_bonus = model
-
-    def predict_next_numbers(self, last_sequence, num_predictions=5, upper_bound=50, kind="main"):
-        """Predict unique numbers for main or bonus."""
+    def predict_next_numbers(self, last_sequence, num_predictions=5):
+        """Generate unique predictions using iterative refinement."""
         predictions = set()
         current_sequence = last_sequence.copy()
-        scaler = self.scaler_main if kind == "main" else self.scaler_bonus
-        model = self.model_main if kind == "main" else self.model_bonus
 
-        for _ in range(num_predictions * 3):
+        for _ in range(num_predictions * 3):  # Allow limited attempts
             if len(predictions) >= num_predictions:
                 break
 
+            # Calculate current features
             window_features = [
                 np.mean(current_sequence), np.std(current_sequence),
                 np.min(current_sequence), np.max(current_sequence),
@@ -168,58 +176,54 @@ class EnhancedNumberPredictor:
                 np.diff(current_sequence).std()
             ]
 
-            sequence_data = [[val] + window_features for val in current_sequence]
+            # Prepare input tensor
+            sequence_data = []
+            for value in current_sequence:
+                sequence_data.append([value] + window_features)
             X = np.array([sequence_data])
 
+            # Scale and predict
             X_flat = X.reshape(-1, X.shape[-1])
-            X_scaled = scaler.transform(X_flat)
+            X_scaled = self.scaler.transform(X_flat)
             X_scaled = X_scaled.reshape(X.shape)
 
-            pred = model.predict(X_scaled, verbose=0)[0][0]
-            processed_pred = int(np.clip(round(pred), 1, upper_bound))
+            pred = self.model.predict(X_scaled, verbose=0)[0][0]
+            processed_pred = int(np.clip(round(pred), 1, 50))
 
+            # Update sequence state
             predictions.add(processed_pred)
             current_sequence = np.roll(current_sequence, -1)
             current_sequence[-1] = processed_pred
 
+        # Ensure full prediction set
         while len(predictions) < num_predictions:
-            predictions.add(np.random.randint(1, upper_bound + 1))
+            predictions.add(np.random.randint(1, 51))
 
         return sorted(predictions)[:num_predictions]
 
 
 def main():
     try:
-        # Load data
-        raw_data = pd.read_csv('data.txt', sep=r'\s+', header=None).values
+
+        # Data loading and preparation
+        raw_data = pd.read_csv('data.txt', sep=r'\s+', header=None).values.flatten()
 
         predictor = EnhancedNumberPredictor(sequence_length=15)
-        main_data, bonus_data = predictor.preprocess_data(raw_data)
+        processed_data = predictor.preprocess_data(raw_data)
 
-        main_X, main_y = predictor.create_sequences(main_data.flatten())
-        bonus_X, bonus_y = predictor.create_sequences(bonus_data.flatten())
+        X, y = predictor.create_sequences(processed_data)
+        if len(X) == 0:
+            raise ValueError("Insufficient data for sequence generation")
 
-        if len(main_X) == 0 or len(bonus_X) == 0:
-            raise ValueError("Insufficient data for training.")
+        # Model training
+        predictor.fit(X, y)
 
-        print("Training main number model...")
-        predictor.fit(main_X, main_y, kind="main")
-
-        print("Training bonus ball model...")
-        predictor.fit(bonus_X, bonus_y, kind="bonus")
-
-        # Predictions
-        final_main_sequence = main_data.flatten()[-predictor.sequence_length:]
-        final_bonus_sequence = bonus_data.flatten()[-predictor.sequence_length:]
-
-        predicted_main = predictor.predict_next_numbers(
-            final_main_sequence, num_predictions=5, upper_bound=50, kind="main")
-        predicted_bonus = predictor.predict_next_numbers(
-            final_bonus_sequence, num_predictions=2, upper_bound=12, kind="bonus")
+        # Generate predictions
+        final_sequence = processed_data[-predictor.sequence_length:]
+        predictions = predictor.predict_next_numbers(final_sequence)
 
         print("\n=== Prediction Results ===")
-        print("Predicted Main Numbers:", predicted_main)
-        print("Predicted Bonus Balls :", predicted_bonus)
+        print("Top predicted numbers:", predictions)
 
     except Exception as e:
         print(f"\nError in processing pipeline: {str(e)}")
