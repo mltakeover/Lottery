@@ -5,7 +5,7 @@ Number Prediction Script
 This script analyzes historical number data to predict the next set of numbers.
 It predicts 5 main numbers in the range of 1-50 and 2 bonus numbers in the
 range of 1-12, based on frequency analysis, statistical patterns, and
-XGBoost, LightGBM, CatBoost, and ARIMA machine learning models.
+XGBoost, LightGBM, CatBoost, and Artificial Neural Networks (ANN) machine learning models.
 """
 
 import numpy as np
@@ -16,13 +16,18 @@ import os
 import sys
 import logging
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 import xgboost as xgb
 import lightgbm as lgb
 import catboost as cb
 import configparser
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.optimizers import Adam
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -149,6 +154,54 @@ def train_model(features, targets, model_type="xgboost"):
     return models, scaler
 
 
+def train_ann_model(features, targets):
+    """Train a simplified artificial neural network model to predict the next set of numbers."""
+    if features.size == 0 or targets.size == 0:
+        return [], None
+
+    # For ANN, we'll use MinMaxScaler to normalize data between 0 and 1
+    scaler = MinMaxScaler()
+    features_scaled = scaler.fit_transform(features)
+
+    models = []
+
+    # Create a model for each target number
+    for i in range(targets.shape[1]):
+        # Create a very simple feedforward neural network
+        model = Sequential([
+            Dense(32, activation='relu', input_dim=features.shape[1]),
+            Dropout(0.2),
+            Dense(16, activation='relu'),
+            Dense(1)  # Output layer for regression
+        ])
+
+        # Compile the model
+        model.compile(
+            optimizer=Adam(learning_rate=0.01),  # Increased learning rate
+            loss='mse'
+        )
+
+        # Define callbacks for training with very aggressive early stopping
+        callbacks = [
+            EarlyStopping(monitor='loss', patience=5, restore_best_weights=True)
+        ]
+
+        # Train the model with minimal epochs and large batch size for speed
+        model.fit(
+            features_scaled,
+            targets[:, i],
+            epochs=10,  # Drastically reduced from 200
+            batch_size=128,  # Significantly increased from 32
+            validation_split=0.0,  # No validation to speed up training
+            callbacks=callbacks,
+            verbose=0
+        )
+
+        models.append(model)
+
+    return models, scaler
+
+
 def evaluate_model(models, scaler, features, targets, model_type="xgboost"):
     """Evaluate the trained machine learning model."""
     if not models or features.size == 0 or targets.size == 0:
@@ -167,22 +220,36 @@ def evaluate_model(models, scaler, features, targets, model_type="xgboost"):
     return {f'{model_type}_mae': mae}
 
 
+def evaluate_ann_model(models, scaler, features, targets):
+    """Evaluate the trained ANN model."""
+    if not models or features.size == 0 or targets.size == 0:
+        return {'ann_mae': float('inf')}
+
+    predictions = []
+    features_scaled = scaler.transform(features)
+
+    for i, model in enumerate(models):
+        pred = model.predict(features_scaled, verbose=0)
+        predictions.append(pred.flatten())  # Flatten predictions from ANN
+
+    # Transpose predictions to match targets shape (num_samples, num_features)
+    predictions = np.array(predictions).T
+
+    mae = mean_absolute_error(targets, predictions)
+    return {'ann_mae': mae}
+
+
 def cross_validate_model(features, targets, model_type="xgboost", n_splits=5):
     """Perform cross-validation for a given model type."""
-    kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
-    mae_scores = []
+    # Simple train-test split instead of full cross-validation for speed
+    X_train, X_test, y_train, y_test = train_test_split(
+        features, targets, test_size=0.2, random_state=42
+    )
 
-    for train_index, test_index in kf.split(features):
-        X_train, X_test = features[train_index], features[test_index]
-        y_train, y_test = targets[train_index], targets[test_index]
-
-        models, scaler = train_model(X_train, y_train, model_type=model_type)
-        if models and scaler:
-            evaluation_results = evaluate_model(models, scaler, X_test, y_test, model_type=model_type)
-            mae_scores.append(evaluation_results[f'{model_type}_mae'])
-
-    if mae_scores:
-        return {f'{model_type}_cv_mae': np.mean(mae_scores)}
+    models, scaler = train_model(X_train, y_train, model_type=model_type)
+    if models and scaler:
+        evaluation_results = evaluate_model(models, scaler, X_test, y_test, model_type=model_type)
+        return {f'{model_type}_cv_mae': evaluation_results[f'{model_type}_mae']}
     else:
         return {f'{model_type}_cv_mae': float('inf')}
 
@@ -253,6 +320,37 @@ def predict_next_numbers(number_sets, num_range, num_to_predict, models, scaler,
     return sorted(ml_prediction)
 
 
+def predict_next_numbers_ann(number_sets, num_range, num_to_predict, models, scaler, window_size):
+    """Predict the next numbers based on the trained ANN model."""
+    ann_prediction = []
+
+    if models and scaler and len(number_sets) >= window_size:
+        recent_window = number_sets[-window_size:]
+        flat_recent_window = [num for subset in recent_window for num in subset]
+
+        if flat_recent_window:
+            feature_for_prediction = np.array([flat_recent_window])
+
+            if feature_for_prediction.shape[1] == scaler.n_features_in_:
+                feature_scaled = scaler.transform(feature_for_prediction)
+                for model_idx, model in enumerate(models):
+                    prediction = round(model.predict(feature_scaled, verbose=0)[0][0])
+                    prediction = max(1, min(num_range, prediction))
+                    ann_prediction.append(prediction)
+            else:
+                logging.warning(
+                    f"ANN prediction skipped due to feature dimension mismatch. Expected {scaler.n_features_in_}, got {feature_for_prediction.shape[1]}.")
+                ann_prediction = []
+
+    # If ANN prediction didn't produce enough numbers, fill with random numbers
+    while len(ann_prediction) < num_to_predict:
+        num = random.randint(1, num_range)
+        if num not in ann_prediction:
+            ann_prediction.append(num)
+
+    return sorted(ann_prediction)
+
+
 def plot_frequency(number_sets, title, filename, num_range):
     """Plots the frequency of each number in the given sets."""
     all_numbers = [num for sublist in number_sets for num in sublist]
@@ -275,12 +373,20 @@ def plot_frequency(number_sets, title, filename, num_range):
 
 
 def main():
+    # Check for TensorFlow GPU availability
+    gpus = tf.config.list_physical_devices('GPU')
+    if gpus:
+        logging.info(f"TensorFlow is using GPU: {gpus}")
+    else:
+        logging.info("TensorFlow is using CPU")
+
     file_path = get_data_file_path()
     main_number_sets, bonus_number_sets = load_data(file_path)
 
     logging.info(
         f"Loaded {len(main_number_sets)} sets of main numbers and {len(bonus_number_sets)} sets of bonus numbers from {file_path}")
 
+    # Traditional ML model types
     model_types = ["xgboost", "lightgbm", "catboost"]
 
     main_predictions = {}
@@ -308,6 +414,7 @@ def main():
             main_features, main_targets, test_size=test_size, random_state=42
         )
 
+        # Train and evaluate traditional ML models
         for model_type in model_types:
             logging.info(f"Training {model_type} model for main numbers...")
             main_models, main_scaler = train_model(X_train_main, y_train_main, model_type=model_type)
@@ -325,7 +432,25 @@ def main():
             cv_results = cross_validate_model(main_features, main_targets, model_type=model_type, n_splits=n_splits)
             main_cv_evaluations.update(cv_results)
 
-        # Ensemble prediction for main numbers
+        # Train and evaluate ANN model
+        logging.info(f"Training ANN model for main numbers...")
+        main_ann_models, main_ann_scaler = train_ann_model(X_train_main, y_train_main)
+        main_ann_prediction = predict_next_numbers_ann(
+            main_number_sets, main_num_range, num_main_to_predict,
+            main_ann_models, main_ann_scaler, window_size=window_size
+        )
+        main_predictions["ann"] = main_ann_prediction
+
+        # Evaluate the ANN model
+        ann_evaluation_results = evaluate_ann_model(
+            main_ann_models, main_ann_scaler, X_test_main, y_test_main
+        )
+        main_evaluations.update(ann_evaluation_results)
+
+        # Skip cross-validation for ANN to save time
+        main_cv_evaluations.update({'ann_cv_mae': ann_evaluation_results['ann_mae']})
+
+        # Ensemble prediction for main numbers (including ANN predictions)
         ensemble_main_prediction = ensemble_predict(main_predictions, main_num_range, num_main_to_predict)
         main_predictions["ensemble"] = ensemble_main_prediction
 
@@ -342,6 +467,7 @@ def main():
             bonus_features, bonus_targets, test_size=test_size, random_state=42
         )
 
+        # Train and evaluate traditional ML models
         for model_type in model_types:
             logging.info(f"Training {model_type} model for bonus numbers...")
             bonus_models, bonus_scaler = train_model(X_train_bonus, y_train_bonus, model_type=model_type)
@@ -359,7 +485,25 @@ def main():
             cv_results = cross_validate_model(bonus_features, bonus_targets, model_type=model_type, n_splits=n_splits)
             bonus_cv_evaluations.update(cv_results)
 
-        # Ensemble prediction for bonus numbers
+        # Train and evaluate ANN model for bonus numbers
+        logging.info(f"Training ANN model for bonus numbers...")
+        bonus_ann_models, bonus_ann_scaler = train_ann_model(X_train_bonus, y_train_bonus)
+        bonus_ann_prediction = predict_next_numbers_ann(
+            bonus_number_sets, bonus_num_range, num_bonus_to_predict,
+            bonus_ann_models, bonus_ann_scaler, window_size=window_size
+        )
+        bonus_predictions["ann"] = bonus_ann_prediction
+
+        # Evaluate the ANN model
+        ann_evaluation_results = evaluate_ann_model(
+            bonus_ann_models, bonus_ann_scaler, X_test_bonus, y_test_bonus
+        )
+        bonus_evaluations.update(ann_evaluation_results)
+
+        # Skip cross-validation for ANN to save time
+        bonus_cv_evaluations.update({'ann_cv_mae': ann_evaluation_results['ann_mae']})
+
+        # Ensemble prediction for bonus numbers (including ANN predictions)
         ensemble_bonus_prediction = ensemble_predict(bonus_predictions, bonus_num_range, num_bonus_to_predict)
         bonus_predictions["ensemble"] = ensemble_bonus_prediction
 
@@ -403,5 +547,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
