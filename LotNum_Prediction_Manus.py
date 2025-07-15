@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
+Script creation 15 July 2025
 Number Prediction Script
 
 This script analyzes historical number data to predict the next set of numbers.
-It predicts 5 main numbers in the range of 1-50 and 2 bonus numbers in the
+It predicts 5 unique main numbers in the range of 1-50 and 2 unique bonus numbers in the
 range of 1-12, based on frequency analysis, statistical patterns, and
 XGBoost, LightGBM, CatBoost, and Artificial Neural Networks (ANN) machine learning models.
+Predictions are ensured to be unique within each set.
 """
 
 import numpy as np
@@ -114,7 +116,7 @@ def load_data(file_path):
 
 
 def create_features(number_sets, window_size):
-    """Create features for machine learning prediction."""
+    """Create features for machine learning prediction with enhanced feature engineering."""
     features = []
     targets = []
 
@@ -123,17 +125,30 @@ def create_features(number_sets, window_size):
 
     for i in range(len(number_sets) - window_size):
         window = number_sets[i:i + window_size]
-        feature = [num for subset in window for num in subset]
+
+        # Basic features (flattened window)
+        feature_vector = [num for subset in window for num in subset]
+
+        # Statistical features
+        flat_window = np.array(window).flatten()
+        feature_vector.append(np.mean(flat_window))
+        feature_vector.append(np.std(flat_window))
+        feature_vector.append(np.min(flat_window))
+        feature_vector.append(np.max(flat_window))
+
+        # Lag features (last draw)
+        feature_vector.extend(window[-1])
+
         target = number_sets[i + window_size]
 
-        features.append(feature)
+        features.append(feature_vector)
         targets.append(target)
 
     return np.array(features), np.array(targets)
 
 
 def train_model(features, targets, model_type="xgboost"):
-    """Train a machine learning model to predict the next set of numbers."""
+    """Train a machine learning model to predict the next set of numbers with hyperparameter tuning."""
     if features.size == 0 or targets.size == 0:
         return [], None
 
@@ -143,11 +158,32 @@ def train_model(features, targets, model_type="xgboost"):
     models = []
     for i in range(targets.shape[1]):
         if model_type == "xgboost":
-            model = xgb.XGBRegressor(objective='reg:squarederror', n_estimators=100, random_state=42)
+            model = xgb.XGBRegressor(
+                objective='reg:squarederror',
+                n_estimators=200,  # Increased estimators
+                learning_rate=0.05,  # Reduced learning rate
+                max_depth=5,  # Adjusted max_depth
+                subsample=0.8,  # Added subsample
+                colsample_bytree=0.8,  # Added colsample_bytree
+                random_state=42
+            )
         elif model_type == "lightgbm":
-            model = lgb.LGBMRegressor(n_estimators=100, random_state=42)
+            model = lgb.LGBMRegressor(
+                n_estimators=200,  # Increased estimators
+                learning_rate=0.05,  # Reduced learning rate
+                num_leaves=31,  # Default, can be tuned
+                max_depth=-1,  # Default, can be tuned
+                random_state=42
+            )
         elif model_type == "catboost":
-            model = cb.CatBoostRegressor(n_estimators=100, random_state=42, verbose=0)
+            model = cb.CatBoostRegressor(
+                n_estimators=200,  # Increased estimators
+                learning_rate=0.05,  # Reduced learning rate
+                depth=6,  # Adjusted depth
+                l2_leaf_reg=3,  # L2 regularization
+                random_state=42,
+                verbose=0
+            )
         model.fit(features_scaled, targets[:, i])
         models.append(model)
 
@@ -255,7 +291,7 @@ def cross_validate_model(features, targets, model_type="xgboost", n_splits=5):
 
 
 def ensemble_predict(all_predictions, num_range, num_to_predict):
-    """Combine predictions from multiple models using averaging."""
+    """Combine predictions from multiple models using averaging and ensure uniqueness."""
     if not all_predictions:
         return sorted(random.sample(range(1, num_range + 1), num_to_predict))
 
@@ -274,44 +310,52 @@ def ensemble_predict(all_predictions, num_range, num_to_predict):
     avg_prediction = np.mean(valid_predictions, axis=0)
 
     # Round to nearest integer and ensure numbers are within range and unique
-    final_prediction = []
+    final_prediction_set = set()
     for num in avg_prediction:
         rounded_num = max(1, min(num_range, round(num)))
-        final_prediction.append(rounded_num)
+        final_prediction_set.add(rounded_num)
 
-    # Ensure uniqueness and correct count
-    unique_prediction = []
-    for num in sorted(final_prediction):
-        if num not in unique_prediction:
-            unique_prediction.append(num)
+    # If not enough unique numbers, fill with random unique numbers
+    while len(final_prediction_set) < num_to_predict:
+        num = random.randint(1, num_range)
+        final_prediction_set.add(num)
 
-    return sorted(unique_prediction[:num_to_predict])
+    return sorted(list(final_prediction_set)[:num_to_predict])
 
 
 def predict_next_numbers(number_sets, num_range, num_to_predict, models, scaler, window_size, model_type="xgboost"):
-    """Predict the next numbers based on the trained ML model."""
+    """Predict the next numbers based on the trained ML model with enhanced feature engineering."""
     ml_prediction = []
+    predicted_set = set()  # Use a set to store unique predictions
 
     if models and scaler and len(number_sets) >= window_size:
         recent_window = number_sets[-window_size:]
-        flat_recent_window = [num for subset in recent_window for num in subset]
 
-        if flat_recent_window:
-            feature_for_prediction = np.array([flat_recent_window])
+        # Recreate the feature vector as done in create_features
+        feature_for_prediction = [num for subset in recent_window for num in subset]
 
-            if feature_for_prediction.shape[1] == scaler.n_features_in_:
-                feature_scaled = scaler.transform(feature_for_prediction)
-                for model_idx, model in enumerate(models):
-                    prediction = round(model.predict(feature_scaled)[0])
-                    prediction = max(1, min(num_range, prediction))
-                    ml_prediction.append(prediction)
-            else:
-                logging.warning(
-                    f"ML prediction skipped due to feature dimension mismatch. Expected {scaler.n_features_in_}, got {feature_for_prediction.shape[1]}.")
-                ml_prediction = []
+        flat_recent_window = np.array(recent_window).flatten()
+        feature_for_prediction.append(np.mean(flat_recent_window))
+        feature_for_prediction.append(np.std(flat_recent_window))
+        feature_for_prediction.append(np.min(flat_recent_window))
+        feature_for_prediction.append(np.max(flat_recent_window))
+        feature_for_prediction.extend(recent_window[-1])
 
-    # If ML prediction didn't produce enough numbers (e.g., due to insufficient data or failed models),
-    # fill with random numbers within the range to meet num_to_predict.
+        feature_for_prediction = np.array([feature_for_prediction])
+
+        if feature_for_prediction.shape[1] == scaler.n_features_in_:
+            feature_scaled = scaler.transform(feature_for_prediction)
+            for model_idx, model in enumerate(models):
+                prediction = round(model.predict(feature_scaled)[0])
+                prediction = max(1, min(num_range, prediction))
+                predicted_set.add(prediction)  # Add to set to ensure uniqueness
+        else:
+            logging.warning(
+                f"ML prediction skipped due to feature dimension mismatch. Expected {scaler.n_features_in_}, got {feature_for_prediction.shape[1]}.")
+
+    ml_prediction = sorted(list(predicted_set))
+
+    # If ML prediction didn\"t produce enough unique numbers, fill with random unique numbers
     while len(ml_prediction) < num_to_predict:
         num = random.randint(1, num_range)
         if num not in ml_prediction:
@@ -321,28 +365,38 @@ def predict_next_numbers(number_sets, num_range, num_to_predict, models, scaler,
 
 
 def predict_next_numbers_ann(number_sets, num_range, num_to_predict, models, scaler, window_size):
-    """Predict the next numbers based on the trained ANN model."""
+    """Predict the next numbers based on the trained ANN model with enhanced feature engineering."""
     ann_prediction = []
+    predicted_set = set()  # Use a set to store unique predictions
 
     if models and scaler and len(number_sets) >= window_size:
         recent_window = number_sets[-window_size:]
-        flat_recent_window = [num for subset in recent_window for num in subset]
 
-        if flat_recent_window:
-            feature_for_prediction = np.array([flat_recent_window])
+        # Recreate the feature vector as done in create_features
+        feature_for_prediction = [num for subset in recent_window for num in subset]
 
-            if feature_for_prediction.shape[1] == scaler.n_features_in_:
-                feature_scaled = scaler.transform(feature_for_prediction)
-                for model_idx, model in enumerate(models):
-                    prediction = round(model.predict(feature_scaled, verbose=0)[0][0])
-                    prediction = max(1, min(num_range, prediction))
-                    ann_prediction.append(prediction)
+        flat_recent_window = np.array(recent_window).flatten()
+        feature_for_prediction.append(np.mean(flat_recent_window))
+        feature_for_prediction.append(np.std(flat_recent_window))
+        feature_for_prediction.append(np.min(flat_recent_window))
+        feature_for_prediction.append(np.max(flat_recent_window))
+        feature_for_prediction.extend(recent_window[-1])
+
+        feature_for_prediction = np.array([feature_for_prediction])
+
+        if feature_for_prediction.shape[1] == scaler.n_features_in_:
+            feature_scaled = scaler.transform(feature_for_prediction)
+            for model_idx, model in enumerate(models):
+                prediction = round(model.predict(feature_scaled, verbose=0)[0][0])
+                prediction = max(1, min(num_range, prediction))
+                predicted_set.add(prediction)  # Add to set to ensure uniqueness
             else:
                 logging.warning(
                     f"ANN prediction skipped due to feature dimension mismatch. Expected {scaler.n_features_in_}, got {feature_for_prediction.shape[1]}.")
-                ann_prediction = []
 
-    # If ANN prediction didn't produce enough numbers, fill with random numbers
+    ann_prediction = sorted(list(predicted_set))
+
+    # If ANN prediction didn\"t produce enough unique numbers, fill with random numbers
     while len(ann_prediction) < num_to_predict:
         num = random.randint(1, num_range)
         if num not in ann_prediction:
