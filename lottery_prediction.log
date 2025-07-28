@@ -1,0 +1,623 @@
+2025-07-28 19:02:30,830 - INFO - [LotNumPredition_Grok3.py:690] - Starting lottery number prediction
+2025-07-28 19:02:30,841 - INFO - [LotNumPredition_Grok3.py:170] - Loaded 1862 valid draws
+2025-07-28 19:02:30,841 - INFO - [LotNumPredition_Grok3.py:708] - Processing main numbers
+2025-07-28 19:05:18,509 - INFO - [LotNumPredition_Grok3.py:686] - Starting lottery number prediction
+2025-07-28 19:05:18,520 - INFO - [LotNumPredition_Grok3.py:166] - Loaded 1862 valid draws
+2025-07-28 19:05:18,520 - INFO - [LotNumPredition_Grok3.py:704] - Processing main numbers
+2025-07-28 19:05:19,240 - INFO - [LotNumPredition_Grok3.py:275] - Applied PCA, reduced features from 1 to 1
+2025-07-28 19:05:19,241 - INFO - [LotNumPredition_Grok3.py:712] - Training xgboost model for main numbers
+2025-07-28 19:05:21,104 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:21,210 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:21,323 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:21,432 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:21,557 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:05:21,558 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:05:21,645 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:21,728 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:21,828 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:21,919 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,026 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,150 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,261 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,373 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:22,477 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,577 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:22,691 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:22,818 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:22,918 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:23,037 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:23,209 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:05:23,324 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:23,424 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:23,552 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:23,699 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:05:23,811 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:23,916 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:24,026 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:24,146 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:24,280 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:05:24,396 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:05:24,398 - INFO - [LotNumPredition_Grok3.py:712] - Training lightgbm model for main numbers
+2025-07-28 19:05:35,620 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:05:46,493 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:05:58,225 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:09,934 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:22,194 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:22,195 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:06:30,585 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:39,048 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:46,650 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:06:55,437 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:04,116 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:14,461 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:24,831 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:34,863 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:44,604 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:07:55,468 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:05,627 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:16,894 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:28,174 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:38,210 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:49,506 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:08:59,958 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:09:11,255 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:09:22,853 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:09:33,293 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:09:44,475 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:09:56,825 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:10:10,011 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:10:23,014 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:10:35,545 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:10:48,597 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:10:48,601 - INFO - [LotNumPredition_Grok3.py:712] - Training random_forest model for main numbers
+2025-07-28 19:10:49,020 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:49,280 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:49,520 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:49,779 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:50,031 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:50,032 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:10:50,227 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:50,409 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:10:50,601 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:50,780 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:50,944 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:51,168 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:51,359 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:51,563 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:51,740 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:51,940 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:52,157 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:52,387 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:10:52,614 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:10:52,809 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:53,022 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:10:53,271 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:53,495 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:53,726 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:53,954 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:54,170 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:54,441 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:10:54,689 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:54,961 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:10:55,210 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:10:55,466 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:10:55,470 - INFO - [LotNumPredition_Grok3.py:712] - Training gradient_boosting model for main numbers
+2025-07-28 19:10:55,643 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:55,818 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:55,988 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:56,157 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:56,325 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,326 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:10:56,396 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,464 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,533 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:56,600 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,677 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,773 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,869 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:56,960 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:57,054 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:57,159 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:10:57,293 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:10:57,410 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:57,530 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:57,649 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:57,781 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:10:57,935 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:58,080 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:58,230 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:58,381 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:58,537 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:58,716 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:10:58,885 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:59,051 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:59,225 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:59,388 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:10:59,389 - INFO - [LotNumPredition_Grok3.py:712] - Training bayesian_ridge model for main numbers
+2025-07-28 19:10:59,404 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,418 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,431 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,446 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,460 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,461 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:10:59,476 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,490 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,505 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,518 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,533 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,547 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,560 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,575 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,590 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,604 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,618 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,631 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,646 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,659 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,672 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,687 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,701 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,716 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,731 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,746 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,759 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:10:59,773 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,787 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,800 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,815 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:10:59,816 - INFO - [LotNumPredition_Grok3.py:712] - Training stacking model for main numbers
+2025-07-28 19:11:01,417 - WARNING - [LotNumPredition_Grok3.py:584] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:11:01,435 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:11:01,436 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:11:01,436 - INFO - [LotNumPredition_Grok3.py:732] - Processing bonus numbers
+2025-07-28 19:11:02,048 - INFO - [LotNumPredition_Grok3.py:740] - Training xgboost model for bonus numbers
+2025-07-28 19:11:02,568 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:11:03,078 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:11:03,428 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:11:03,725 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:11:04,109 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:11:04,543 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:11:04,956 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:11:05,427 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:11:05,876 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:11:06,376 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:11:06,899 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:11:07,420 - INFO - [LotNumPredition_Grok3.py:346] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:11:07,421 - INFO - [LotNumPredition_Grok3.py:740] - Training lightgbm model for bonus numbers
+2025-07-28 19:11:20,615 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:11:34,129 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:11:42,635 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:11:51,062 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:12:01,788 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:12:13,175 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:12:25,279 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:12:38,491 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:12:50,870 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:13:04,544 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:13:21,187 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:13:39,748 - INFO - [LotNumPredition_Grok3.py:346] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:13:39,750 - INFO - [LotNumPredition_Grok3.py:740] - Training random_forest model for bonus numbers
+2025-07-28 19:13:42,169 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:13:44,322 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:13:44,983 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:13:45,603 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:13:46,637 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:13:47,718 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:13:49,372 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:13:50,995 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:13:52,893 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:13:54,791 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:13:57,219 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:13:59,714 - INFO - [LotNumPredition_Grok3.py:346] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:13:59,717 - INFO - [LotNumPredition_Grok3.py:740] - Training gradient_boosting model for bonus numbers
+2025-07-28 19:14:02,472 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:05,261 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:14:05,930 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:06,797 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:14:08,010 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:09,215 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:10,978 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:13,583 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:14:16,327 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:14:18,792 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:14:21,478 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:14:24,797 - INFO - [LotNumPredition_Grok3.py:346] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:14:24,798 - INFO - [LotNumPredition_Grok3.py:740] - Training bayesian_ridge model for bonus numbers
+2025-07-28 19:14:24,969 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:25,121 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:25,221 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:25,297 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:25,394 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:14:25,509 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:14:25,714 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:14:25,930 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:14:26,128 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:14:26,275 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:26,408 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:14:26,517 - INFO - [LotNumPredition_Grok3.py:346] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:14:26,517 - INFO - [LotNumPredition_Grok3.py:740] - Training stacking model for bonus numbers
+2025-07-28 19:14:30,852 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,852 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,852 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:14:30,852 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:14:30,853 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:14:30,854 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,854 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,854 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:14:30,854 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:14:30,856 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,856 - WARNING - [LotNumPredition_Grok3.py:339] - Unsupported model type: stacking
+2025-07-28 19:14:30,856 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:14:30,856 - WARNING - [LotNumPredition_Grok3.py:392] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:14:31,094 - INFO - [LotNumPredition_Grok3.py:647] - Saved frequency plot to main_numbers_frequency.png
+2025-07-28 19:14:31,192 - INFO - [LotNumPredition_Grok3.py:647] - Saved frequency plot to bonus_numbers_frequency.png
+2025-07-28 19:14:31,256 - INFO - [LotNumPredition_Grok3.py:682] - Saved model comparison plot to main_numbers_model_comparison_mae.png
+2025-07-28 19:14:31,328 - INFO - [LotNumPredition_Grok3.py:682] - Saved model comparison plot to bonus_numbers_model_comparison_mae.png
+2025-07-28 19:14:31,394 - INFO - [LotNumPredition_Grok3.py:682] - Saved model comparison plot to main_numbers_model_comparison_rmse.png
+2025-07-28 19:14:31,457 - INFO - [LotNumPredition_Grok3.py:682] - Saved model comparison plot to bonus_numbers_model_comparison_rmse.png
+2025-07-28 19:14:31,457 - INFO - [LotNumPredition_Grok3.py:806] - Prediction pipeline completed
+2025-07-28 19:35:07,245 - INFO - [LotNumPredition_Grok3.py:689] - Starting lottery number prediction
+2025-07-28 19:35:07,256 - INFO - [LotNumPredition_Grok3.py:169] - Loaded 1861 valid draws
+2025-07-28 19:35:07,257 - INFO - [LotNumPredition_Grok3.py:707] - Processing main numbers
+2025-07-28 19:35:07,993 - INFO - [LotNumPredition_Grok3.py:278] - Applied PCA, reduced features from 1 to 1
+2025-07-28 19:35:07,995 - INFO - [LotNumPredition_Grok3.py:715] - Training xgboost model for main numbers
+2025-07-28 19:35:09,809 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:09,913 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,016 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,114 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,244 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:35:10,245 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:35:10,333 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:10,425 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,515 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:10,602 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,691 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:10,830 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:10,923 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:11,009 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:11,116 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:11,206 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:11,309 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:11,436 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:11,525 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:11,625 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:11,740 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:35:11,924 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:12,038 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:12,140 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:12,279 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:35:12,385 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:12,491 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:12,609 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:12,737 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 3): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:12,847 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 4): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:35:13,001 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 5): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:35:13,003 - INFO - [LotNumPredition_Grok3.py:715] - Training lightgbm model for main numbers
+2025-07-28 19:35:24,063 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:35:35,168 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:35:45,997 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 31, 'subsample': 0.7}
+2025-07-28 19:35:56,570 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:08,405 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:08,406 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:36:16,089 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:23,822 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:31,280 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:39,604 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:47,922 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:36:58,017 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:08,302 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:18,137 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:27,127 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:37,496 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:47,214 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:37:57,828 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:38:08,273 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:38:17,741 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:38:28,455 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:38:38,210 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:38:49,293 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:39:00,507 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:39:10,672 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:39:21,712 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 31, 'subsample': 0.7}
+2025-07-28 19:39:33,439 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 31, 'subsample': 0.7}
+2025-07-28 19:39:46,216 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:39:59,131 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:40:10,933 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:40:23,277 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:40:23,279 - INFO - [LotNumPredition_Grok3.py:715] - Training random_forest model for main numbers
+2025-07-28 19:40:23,716 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:23,971 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:24,200 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:24,439 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:24,663 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:24,664 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:40:24,858 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:25,034 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:25,225 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:40:25,413 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:25,596 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:25,805 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:26,019 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:26,232 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:40:26,420 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:40:26,610 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:40:26,837 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:27,052 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:27,275 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:27,486 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:27,704 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:40:27,938 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:40:28,188 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:40:28,414 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:40:28,650 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 5, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:40:28,881 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 5, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:40:29,125 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:29,350 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:40:29,581 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 3): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:29,823 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 4): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:30,074 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 5): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:40:30,078 - INFO - [LotNumPredition_Grok3.py:715] - Training gradient_boosting model for main numbers
+2025-07-28 19:40:30,283 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:40:30,440 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:30,606 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:30,780 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:30,968 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:40:30,969 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:40:31,046 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,115 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:31,183 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:31,261 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,342 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:31,441 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:31,538 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,630 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,728 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,823 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:31,957 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:40:32,076 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:32,195 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:32,320 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:32,444 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:40:32,589 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:32,743 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:32,893 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:33,041 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:33,204 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:33,393 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:33,565 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:33,739 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 3): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:33,904 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 4): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:34,070 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 5): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:34,071 - INFO - [LotNumPredition_Grok3.py:715] - Training bayesian_ridge model for main numbers
+2025-07-28 19:40:34,087 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,099 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,117 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,134 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,151 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,152 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:40:34,165 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,179 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,192 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,209 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,222 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,236 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,250 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,267 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,283 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,297 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,312 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,326 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,343 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,361 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,375 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,390 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,405 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,422 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,435 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,451 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,467 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:40:34,482 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,497 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 3): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,514 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 4): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,531 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 5): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:40:34,531 - INFO - [LotNumPredition_Grok3.py:715] - Training stacking model for main numbers
+2025-07-28 19:40:37,765 - WARNING - [LotNumPredition_Grok3.py:587] - Feature vector too long (147 vs 1). Truncating
+2025-07-28 19:40:37,781 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,782 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 3 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 4 (None)
+2025-07-28 19:40:37,783 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 5 (None)
+2025-07-28 19:40:37,783 - INFO - [LotNumPredition_Grok3.py:735] - Processing bonus numbers
+2025-07-28 19:40:38,397 - INFO - [LotNumPredition_Grok3.py:743] - Training xgboost model for bonus numbers
+2025-07-28 19:40:38,958 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:39,495 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:40:39,854 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:40,396 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:40,846 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:41,277 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:41,731 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:42,231 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:42,686 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:40:43,229 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:43,953 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 1): {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:40:44,621 - INFO - [LotNumPredition_Grok3.py:349] - Best params for xgboost (target 2): {'colsample_bytree': 0.7, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:40:44,622 - INFO - [LotNumPredition_Grok3.py:743] - Training lightgbm model for bonus numbers
+2025-07-28 19:41:01,475 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:41:19,610 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:41:29,604 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:41:38,931 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:41:49,666 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:42:01,152 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:42:12,504 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:42:25,345 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:42:37,149 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:42:50,208 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:43:03,950 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'num_leaves': 15, 'subsample': 0.7}
+2025-07-28 19:43:18,733 - INFO - [LotNumPredition_Grok3.py:349] - Best params for lightgbm (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 100, 'num_leaves': 31, 'subsample': 0.7}
+2025-07-28 19:43:18,735 - INFO - [LotNumPredition_Grok3.py:743] - Training random_forest model for bonus numbers
+2025-07-28 19:43:20,790 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:43:22,839 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:43:23,428 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:43:23,977 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 50}
+2025-07-28 19:43:25,025 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:43:25,987 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:43:27,301 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:43:28,597 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:43:30,460 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 19:43:32,315 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:43:34,651 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 1): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 19:43:36,756 - INFO - [LotNumPredition_Grok3.py:349] - Best params for random_forest (target 2): {'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}
+2025-07-28 19:43:36,758 - INFO - [LotNumPredition_Grok3.py:743] - Training gradient_boosting model for bonus numbers
+2025-07-28 19:43:39,324 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:43:41,861 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:43:42,436 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:43:43,010 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:43:44,166 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 5, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:43:45,368 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:43:46,960 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:43:48,723 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2025-07-28 19:43:50,892 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.7}
+2025-07-28 19:43:53,037 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:43:55,665 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 1): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}
+2025-07-28 19:43:58,491 - INFO - [LotNumPredition_Grok3.py:349] - Best params for gradient_boosting (target 2): {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.7}
+2025-07-28 19:43:58,492 - INFO - [LotNumPredition_Grok3.py:743] - Training bayesian_ridge model for bonus numbers
+2025-07-28 19:43:58,615 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:58,780 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:58,995 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:59,081 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:59,173 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,258 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,366 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,469 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-05, 'alpha_2': 1e-06, 'lambda_1': 1e-06, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,583 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,725 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:59,871 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 1): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-05}
+2025-07-28 19:43:59,995 - INFO - [LotNumPredition_Grok3.py:349] - Best params for bayesian_ridge (target 2): {'alpha_1': 1e-06, 'alpha_2': 1e-05, 'lambda_1': 1e-05, 'lambda_2': 1e-06}
+2025-07-28 19:43:59,995 - INFO - [LotNumPredition_Grok3.py:743] - Training stacking model for bonus numbers
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:44:03,431 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,432 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:44:03,433 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:44:03,433 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,433 - WARNING - [LotNumPredition_Grok3.py:342] - Unsupported model type: stacking
+2025-07-28 19:44:03,433 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 1 (None)
+2025-07-28 19:44:03,433 - WARNING - [LotNumPredition_Grok3.py:395] - Skipping evaluation for stacking model 2 (None)
+2025-07-28 19:44:03,612 - INFO - [LotNumPredition_Grok3.py:650] - Saved frequency plot to main_numbers_frequency.png
+2025-07-28 19:44:03,696 - INFO - [LotNumPredition_Grok3.py:650] - Saved frequency plot to bonus_numbers_frequency.png
+2025-07-28 19:44:03,758 - INFO - [LotNumPredition_Grok3.py:685] - Saved model comparison plot to main_numbers_model_comparison_mae.png
+2025-07-28 19:44:03,825 - INFO - [LotNumPredition_Grok3.py:685] - Saved model comparison plot to bonus_numbers_model_comparison_mae.png
+2025-07-28 19:44:03,890 - INFO - [LotNumPredition_Grok3.py:685] - Saved model comparison plot to main_numbers_model_comparison_rmse.png
+2025-07-28 19:44:03,953 - INFO - [LotNumPredition_Grok3.py:685] - Saved model comparison plot to bonus_numbers_model_comparison_rmse.png
+2025-07-28 19:44:03,954 - INFO - [LotNumPredition_Grok3.py:809] - Prediction pipeline completed
