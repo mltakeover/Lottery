@@ -147,7 +147,7 @@ class EnhancedNumberPredictor:
         history = self.model.fit(
             X_train, y_train,
             validation_data=(X_val, y_val),
-            epochs=100,
+            epochs=5,
             batch_size=64,
             callbacks=callbacks,
             verbose=1

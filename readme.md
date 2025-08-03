@@ -1,7 +1,7 @@
 # Number Prediction Tool
 
-[![GitHub stars](https://img.shields.io/github/stars/username/number-prediction-tool?style=social)](https://github.com/username/number-prediction-tool)
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/username/number-prediction-tool)
+[![GitHub stars](https://img.shields.io/github/stars/mltakeover/number-prediction-tool?style=social)](https://github.com/mltakeover/Lottery)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/mltakeover/EuroMillionsLottery/tree/main)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
